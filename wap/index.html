@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="js/model/model.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/model/model.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/clipboard.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrap">
+
+		</div>
+		<script type="text/javascript">
+			var clipboard = new ClipboardJS('.btn-copy');
+
+			clipboard.on('success', function(e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				alert("复制成功：" + e.text)
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function(e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+		</script>
+
+		
+
+	</body>
+</html>
